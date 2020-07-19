@@ -27,8 +27,8 @@ This is an app that allows you to easily create and keep track of any notes you 
 
 ## Usage 
 
-[Deployed Site](https://note-taker-brennenmcgill.herokuapp.com/)
-Input you note title and a description of note and submit it.
+* [Deployed Site](https://note-taker-brennenmcgill.herokuapp.com/)
+* Input you note title and a description of note and submit it.
  
 ## Contact
 
