@@ -1,8 +1,10 @@
 const express = require('express');
 const app = express();
 const path = require('path');
-const db = require('./db/db');
+let db = require('./db/db.json');
 const fs = require('fs');
+var uniqid = require('uniqid');
+
 
 // Sets up the Express app to handle data parsing
 app.use('/static', express.static(__dirname + '/public'));
@@ -21,6 +23,18 @@ app.get('/api/notes', (req, res) => {
   res.json(db);
 });
 
+app.post('/api/notes', (req, res) => {
+  const newNote = {'title': req.body.title, 'text': req.body.text, 'id': uniqid()};
+
+  db.push(newNote);
+
+  fs.writeFile('./db/db.json', JSON.stringify(db),  () => {res.json(newNote)});
+})
+
+app.delete('/api/notes/:id', (req, res) => {
+  let removeNote = res.param.id;
+  
+});
 
 app.listen(3001, () => {
   console.log(`API server now on port 3001!`);
