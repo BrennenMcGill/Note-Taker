@@ -4,6 +4,7 @@ const path = require('path');
 let db = require('./db/db.json');
 const fs = require('fs');
 var uniqid = require('uniqid');
+const PORT = process.env.PORT || 3001;
 
 
 // Sets up the Express app to handle data parsing
