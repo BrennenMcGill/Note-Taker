@@ -32,8 +32,19 @@ app.post('/api/notes', (req, res) => {
 })
 
 app.delete('/api/notes/:id', (req, res) => {
-  let removeNote = res.param.id;
+  let removeNote = req.param.id;
   
+  function checkNote(id) {
+    return removeNote == id.id
+  }
+
+  let foundIndex = db.findIndex(checkNote)
+
+  db.splice(foundIndex, 1);
+
+  fs.writeFile('./db/db.json', JSON.stringify(db),  () => {res.sendStatus(200)});
+
+
 });
 
 app.listen(3001, () => {
