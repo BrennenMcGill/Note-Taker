@@ -13,12 +13,12 @@ This is an app that allows you to easily create and keep track of any notes you 
 
 ## Installation
 
-*JavaScript
-*HTML
-*CSS
-*ES6
-*jQuery
-*Node
+* JavaScript
+* HTML
+* CSS
+* ES6
+* jQuery
+* Node
 
 ## Images 
 
